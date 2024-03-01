@@ -113,7 +113,9 @@ class Product(models.Model):
 
 
 class ProductSpecificationValue(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name="product_specification_value"
+    )
     specification = models.ForeignKey(ProductSpecification, on_delete=models.RESTRICT)
     value = models.CharField(
         verbose_name=_("Value"),
