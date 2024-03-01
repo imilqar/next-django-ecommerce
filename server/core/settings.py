@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "store",
     "mptt",
+    "rest_framework",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
@@ -152,4 +154,11 @@ UNFOLD = {
             "950": "0 36 42",
         }
     },
+}
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
+    ],
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }

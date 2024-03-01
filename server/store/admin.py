@@ -68,4 +68,5 @@ class ProductSpecificationValueInline(TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(ModelAdmin):
+    list_display = ("name", "slug", "category", "price", "discount_price", "is_active")
     inlines = [ProductSpecificationValueInline, ProductImageInline]
